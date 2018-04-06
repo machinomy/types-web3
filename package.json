@@ -1,19 +1,19 @@
 {
-  "name": "@machinomy/types-truffle-contract",
+  "name": "@machinomy/types-web3",
   "version": "0.0.3",
-  "description": "TypeScript declaration for truffle-contract",
+  "description": "TypeScript declaration for web3",
   "main": "index.d.ts",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/machinomy/types-truffle-contract.git"
+    "url": "git+https://github.com/machinomy/types-web3.git"
   },
   "author": "Sergey Ukustov <sergey.ukustov@machinomy.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/machinomy/types-truffle-contract/issues"
+    "url": "https://github.com/machinomy/types-web3/issues"
   },
-  "homepage": "https://github.com/machinomy/types-truffle-contract#readme",
+  "homepage": "https://github.com/machinomy/types-web3#readme",
   "devDependencies": {
     "@types/bignumber.js": "^4.0.2"
   },
