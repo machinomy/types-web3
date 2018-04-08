@@ -2,5 +2,5 @@
 
 # Installation
 ```
-yarn add https://github.com/machinomy/types-web3 -D
+yarn add @machinomy/types-web3 -D
 ```
