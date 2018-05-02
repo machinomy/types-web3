@@ -3,6 +3,7 @@ declare module 'web3' {
   import * as BigNumber from 'bignumber.js';
 
   type MixedData = string|number|object|any[]|BigNumber.BigNumber;
+  type HexString = string
 
   class Web3 {
     public static providers: typeof providers;
@@ -103,6 +104,7 @@ declare module 'web3' {
 
     interface Contract<A extends ContractInstance> {
       at(address: string): A;
+      getData(...args: any[]): HexString
     }
 
     interface FilterObject {
