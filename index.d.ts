@@ -121,7 +121,7 @@ declare module 'web3' {
     }
 
     interface FilterResult {
-      get(callback: () => void): void;
+      get<A>(callback: (err: Error, logs: Array<SolidityEvent<A> & LogEntry>) => void): void;
       watch<A>(callback: (err: Error, result: SolidityEvent<A>) => void): void;
       stopWatching(callback: () => void): void;
     }
