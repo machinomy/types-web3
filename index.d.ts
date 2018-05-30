@@ -13,6 +13,7 @@ declare module 'web3' {
     public personal: Web3.PersonalApi | undefined;
     public version: Web3.VersionApi;
     public net: Web3.NetApi;
+    public admin: Web3.AdminApi;
 
     public constructor(provider?: Web3.Provider);
 
@@ -269,6 +270,11 @@ declare module 'web3' {
       peerCount: boolean;
       getListening(cd: (err: Error, listening: boolean) => void): void;
       getPeerCount(cd: (err: Error, peerCount: number) => void): void;
+    }
+
+    interface AdminApi {
+      getPeers(callback: (err: Error, peers: Array<string>) => void)
+      removePeer(peer: string, callback: (err: Error) => void)
     }
 
     type BlockParam = number|'earliest'|'latest'|'pending';
