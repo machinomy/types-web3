@@ -14,6 +14,7 @@ declare module 'web3' {
     public version: Web3.VersionApi;
     public net: Web3.NetApi;
     public admin: Web3.AdminApi;
+    public _extend: Web3.Extend;
 
     public constructor(provider?: Web3.Provider);
 
@@ -59,6 +60,49 @@ declare module 'web3' {
     type AbiDefinition = FunctionAbi|EventAbi;
 
     type FunctionAbi = MethodAbi|ConstructorAbi|FallbackAbi;
+
+    interface Extension {
+      property: string
+      methods: Array<Extend.Method>
+      properties: Array<Extend.Property>
+    }
+
+    interface Extend {
+      (extension: Extension): void
+      utils: {
+        formatInputString: any
+        formatInputInt: any
+        formatInputInteger: any
+      }
+      formatters: {
+        formatOutputBool: any
+        formatOutputString: any
+      }
+    }
+
+    namespace Extend {
+      interface MethodParams {
+        name: string
+        call: string
+        params: number
+        inputFormatter: any
+        outputFormatter: any
+      }
+
+      class Method {
+        constructor (params: MethodParams)
+      }
+
+      interface PropertyParams {
+        name: string
+        getter: string
+        outputFormatter: any
+      }
+
+      class Property {
+        constructor (params: PropertyParams)
+      }
+    }
 
     enum AbiType {
       Function = 'function',
