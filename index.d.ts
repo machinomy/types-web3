@@ -115,6 +115,26 @@ declare module 'web3' {
       topics?: LogTopic[];
     }
 
+    interface Peer {
+      caps: Array<string>
+      id: string
+      name: string
+      network: {
+        inbound: boolean
+        localAddress: string
+        remoteAddress: string
+        static: boolean
+        trusted: false
+      }
+      protocols: {
+        les?: {
+          difficulty: number
+          head: string
+          version: number
+        }
+      }
+    }
+
     type LogTopic = null|string|string[];
 
     interface SolidityEvent<A> {
@@ -273,7 +293,7 @@ declare module 'web3' {
     }
 
     interface AdminApi {
-      getPeers(callback: (err: Error, peers: Array<string>) => void)
+      getPeers(callback: (err: Error, peers: Array<Peer>) => void)
       removePeer(peer: string, callback: (err: Error) => void)
     }
 
