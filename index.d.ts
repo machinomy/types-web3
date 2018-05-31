@@ -78,6 +78,8 @@ declare module 'web3' {
         formatOutputBool: any
         formatOutputString: any
       }
+      Method: typeof Extend.Method
+      Property: typeof Extend.Property
     }
 
     namespace Extend {
